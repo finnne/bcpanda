@@ -1,0 +1,98 @@
+page-my-order-list {
+	.sec_list{
+		&{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		li{
+			display: flex;
+			width: 100%;
+			/*height: 7.5rem;*/
+			background-color: #ffffff;
+			padding: 0.7rem;
+			margin-bottom: 10px;
+			border-radius: 3px;
+			box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+			overflow: hidden;
+		}
+		li > .order_image{
+			&{
+				display: inline-block;
+				width: 6rem;
+				height: 6rem;
+				background-color: #cccccc;
+			}
+			img{
+				height: 100%;
+			}
+		}
+		li > .order_con{
+			&{
+				flex-grow: 1;
+				display: inline-block;
+				padding: 0 0.2rem 0 1rem;
+			}
+			& > div{
+				margin-top: 0.7rem; 
+			}
+			h4{
+				display: inline-block;
+				font-size: 1.4rem;
+				color: #333333;
+			}
+			.order_buy{
+				display: inline-block;
+				width: 8rem;
+				height: 2rem;
+				line-height: 2rem;
+				border-radius: 1rem;
+				font-size: 1.2rem;
+				color: #ffffff;
+				text-align: center;
+				background-color: #6bb967;
+			}
+			.order_sell{
+				display: inline-block;
+				width: 8rem;
+				height: 2rem;
+				line-height: 2rem;
+				border-radius: 1rem;
+				font-size: 1.2rem;
+				color: #ffffff;
+				text-align: center;
+				background-color: #ff5060;
+			}
+			& > p{
+				margin-top: 1rem; 
+			}
+			& > p > span{
+				font-size: 1.2rem;
+				color: #999999;
+			}
+			.right{
+				float: right;
+			}
+		}
+	}
+
+	.list_empty{
+		&{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+		}
+		& > span{
+			display: inline-block;
+		}
+		img{
+			height: 12rem;
+		}
+		em{
+			display: inline-block;
+			font-style: normal;
+			font-size: 1.5rem;
+			color: #999999;
+			margin-top: 4rem;
+		}
+	}
+}

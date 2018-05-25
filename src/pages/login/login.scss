@@ -1,0 +1,71 @@
+page-login {
+
+	.reg_form{
+		&{
+			background-color: #ffffff;
+		}
+		li{
+			border-top: 1px solid #eeeeee;
+			padding: 32px 0 10px 0;
+			position: relative;
+		}
+		li:first-child{
+			border: none;
+		}
+		li > label{
+			font-size: 1.2rem;
+			color: #b6b6b6;
+			padding-left: 2.8rem;
+		}
+		li > input{
+			display: block;
+			height: 2.5rem;
+			padding-left: 2.8rem;
+			border:none;
+			background-color: none;
+		}
+		.pwd_switch{
+			position: absolute;
+			right: 15px;
+			bottom: 14px;
+		}
+
+	}
+
+	.tip{
+		&{
+			display: inline-block;
+			font-size: 1.4rem;
+			color: #ff5060;
+			padding: 6px 35px 10px 35px; 
+			margin-top: 10px;
+			border-width:16px 2px 2px 2px;
+			border-style: solid;
+			border-color: transparent;
+			border-image:url(../assets/imgs/tip_border.png) 32 4 4 4 round;
+			-webkit-border-image:url(../assets/imgs/tip_border.png) 32 4 4 4 round;
+		}
+		img{
+			height: 1.5rem;
+			vertical-align: middle;
+		}
+		span{
+			vertical-align: middle;
+		}
+	}
+	.reg_btn{
+		margin: 2rem 0 0 0;
+	}
+	.link_con{
+		&{
+			margin-top:4rem; 
+			width: 100%;
+			text-align: center;
+		}
+		.login_link{
+			font-size: 1.5rem;
+			color: #50aefe;
+		}
+	}
+
+}

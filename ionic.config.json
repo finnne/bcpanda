@@ -1,0 +1,17 @@
+{
+  "name": "BCPanda",
+  "app_id": "com.finne.bapanda",
+  "type": "ionic-angular",
+  "integrations": {
+      "cordova": {}
+  },
+  "proxies_bak": [
+    {
+      "path": "/JieWebApp",
+      "proxyUrl1": "http://10.0.2.6:8081/JieWebApp",
+      "proxyUrl2": "http://10.0.2.200:8081/JieWebApp",
+      "proxyUrl3": "http://jenkins.lend51.com:8072/JieWebApp",
+      "proxyUrl": "http://appweb01.lend51.com/JieWebApp"
+    }
+  ]
+}

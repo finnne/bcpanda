@@ -1,0 +1,8 @@
+{
+  "name": "BCPanda",
+  "min_native_interface": 1,
+  "ios_identifier": "com.finne.bcpanda",
+  "android_identifier": "com.finne.bcpanda",
+  "update": "now",
+  "content_url": "http://10.0.2.201/hotcode/www"
+}

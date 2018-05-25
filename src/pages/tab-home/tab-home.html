@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>区块链熊猫</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="position:relative;">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="bubbles"
+      refreshingText="正在刷新...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="sec_banner clearfix">
+    <p class="beta_text">区块链熊猫beta版</p>
+    <img class="img_panda" src="assets/imgs/banner_panda.png">
+    <img class="img_title_1" src="assets/imgs/banner_h1.png">
+    <img class="img_title_2" src="assets/imgs/banner_h2.png">
+    <button (click)="receiveBtnClick()">立即领取</button>
+  </div>
+  
+  <div class="sec_list">
+    <div class="head">
+      <h3>熊猫广场</h3>
+      <a (click)="navToExplain()">什么是区块链熊猫？</a>
+    </div>
+    <ul class="list clearfix" *ngIf="(pandaList.length>0)">
+      <li *ngFor="let panda of pandaList" (click)="showPandaDetail(panda.pandaId)">
+        <div class="img_con" [style.background-color]="'#'+ panda.backColor">
+          <span class="flex-center"><img src="{{panda.url}}"></span>
+        </div>
+        <i>{{panda.degree}}</i>
+        <h6>{{panda.name}}　</h6>
+        <p>
+          第{{panda.generation}}代<small> |</small>
+          <span class="price" *ngIf="panda.state==2">{{panda.price}}竹子</span>
+          <span *ngIf="panda.state!=2">暂未定价</span>
+        </p>
+      </li>
+    </ul>
+
+    <ul class="list clearfix" *ngIf="(pandaList.length==0)">
+      <li>
+        <div class="img_con">
+          <span></span>
+        </div>
+
+      </li>
+      <li>
+        <div class="img_con">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <div class="img_con">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <div class="img_con">
+          <span></span>
+        </div>
+      </li>
+    </ul>
+    <!-- <ul class="list clearfix">
+      <li style="background-color:#abe2ff;">
+        <span><img alt=""></span>
+        <h6>区块链熊猫000001</h6>
+        <small>第0代</small>
+        <i>普通</i>
+      </li>
+     </ul> -->
+  </div>
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="正在加载">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

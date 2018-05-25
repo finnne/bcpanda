@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的订单</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content pullingIcon="arrow-dropdown"
+			pullingText="下拉刷新"
+			refreshingSpinner="bubbles"
+			refreshingText="正在刷新...">
+		</ion-refresher-content>
+	</ion-refresher>
+
+	<div style="width:100%; height:100%;">
+		<div class="list_empty middle-box" *ngIf="orderList.length==0">
+			<span>
+				<img src="assets/imgs/list_empty.png"/>
+				<br/>
+				<em>没有相关的订单信息</em>
+			</span>
+		</div>
+
+		<ul class="sec_list wrapper" *ngIf="orderList.length>0">
+			<li *ngFor="let order of orderList">
+				<span class="order_image" [style.background-color]="'#'+order.backColor">
+					<img src="{{order.imgAddr}}"/>
+				</span>
+				<div class="order_con">
+					<div class="clearfix">
+						<h4>{{order.pandaName}}</h4>
+						<span class="order_buy right" *ngIf="order.direction==0">购买支出</span>
+						<span class="order_sell right" *ngIf="order.direction==1">购买收入</span>
+					</div>
+					<p class="clearfix">
+						<span>{{order.operateTime}}</span>
+						<span class="right">{{(order.direction==1 ? '+' : '-')}}{{order.amount}}竹子</span>
+					</p>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content
+			loadingSpinner="bubbles"
+			loadingText="正在加载">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>登录</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div>
+		<ul class="reg_form">
+			<li>
+				<label>手机号码</label>
+				<input type="tel" oninput="value=(value.length>11)?(value.slice(0,11)):value" [(ngModel)]="txtTel" placeholder="请输入手机号码" />
+			</li>
+			<li>
+				<label>密码</label>
+				<input type="{{pwdSwitch ? 'text' : 'password'}}" [(ngModel)]="txtPwd" maxLength="20" placeholder="请输入登录密码" />
+				<ion-toggle class="pwd_switch" [(ngModel)]="pwdSwitch"></ion-toggle>
+			</li>
+		</ul>
+
+		<div class="wrapper text-center clearfix">
+			<button class="btn-base full reg_btn" (click)="loginClick()">登录</button>
+			<p class="tip">
+				<img src="assets/imgs/tip_icon.png">
+				<span>随手借用户可直接登录区块链熊猫</span>
+			</p>
+		</div>
+
+		<div class="link_con">
+			<a class="login_link" (click)="registerLinkClick()">注册新用户</a>
+		</div>
+	</div>
+
+</ion-content>
+

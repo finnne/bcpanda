@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的账户</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="bubbles"
+      refreshingText="正在刷新...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="sec_banner">
+    <div class="flex-middle">
+        <span class="user_head"><img src="{{userInfo.headUrl || 'assets/imgs/head_default.png'}}"/></span>
+        <h4 class="user_name">{{userInfo.userName}}</h4>
+        <h4 class="user_tel">{{userInfo.phone}}</h4>
+    </div>
+  </div>
+
+  <ul class="link_group">
+    <li (click)="myPandaBtnClick()">
+      <span class="link_icon middle-box">
+        <img src="./assets/imgs/icon_panda.png"/>
+      </span>
+      <div class="link_block middle-box">
+        <label>我的熊猫</label>
+        <span class="link_right middle-box">
+          <img class="link_arrow" src="./assets/imgs/icon_arrow.png"/>
+        </span>
+      </div>
+    </li>
+    <li (click)="myOrderBtnClick()">
+      <span class="link_icon middle-box">
+        <img src="./assets/imgs/icon_order.png"/>
+      </span>
+      <div class="link_block middle-box">
+        <label>我的订单</label>
+        <span class="link_right middle-box">
+          <img class="link_arrow" src="./assets/imgs/icon_arrow.png"/>
+        </span>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="link_group">
+    <li>
+      <span class="link_icon middle-box">
+        <img src="./assets/imgs/icon_banboo.png"/>
+      </span>
+      <div class="link_block middle-box">
+        <label>我的竹子</label>
+        <span class="link_right middle-box">
+          <em class="colred">{{userInfo.banbooScore}}</em>
+        </span>
+      </div>
+    </li>
+    <li (click)="signinClick()">
+      <span class="link_icon middle-box">
+        <img src="./assets/imgs/icon_sign.png"/>
+      </span>
+      <div class="link_block middle-box">
+        <label>每日签到</label>
+        <span class="link_right middle-box">
+          <em class="{{(userInfo.signstate ? 'colgray' : 'colblue')}}">{{userInfo.signstate ? "今日已领" : "签到领竹子"}}</em>
+          <img class="link_arrow" src="./assets/imgs/icon_arrow.png"/>
+        </span>
+      </div>
+    </li>
+  </ul>
+  
+  <!-- <div class="sec_signin clearfix">
+    <div class="banboo">
+      <img class="banboo_icon" src="assets/imgs/banboo.png">
+      <label class="banboo_label">{{userInfo.banbooScore}}个竹子</label>
+    </div>
+    <button class="sign_btn" (click)="signinClick()" [disabled]="userInfo.signstate"></button>
+  </div> -->
+
+<!-- 
+  <div class="sec_list clearfix">
+    <div class="head">
+      <h3>我的熊猫</h3>
+    </div>
+    <div>
+      <div class="panda_empty" *ngIf="userInfo.particulars.length==0">
+        <img src="assets/imgs/empty_panda.png"/>
+        <h5>您还未领养熊猫</h5>
+        <p>立即去领养一只吧</p>
+      </div>
+
+      <ul class="list clearfix" *ngIf="userInfo.particulars.length>0">
+        <li *ngFor="let panda of userInfo.particulars" (click)="showPandaDetail(panda.pandaId)">
+          <div class="img_con" [style.background-color]="panda.backColor">
+            <span class="flex-center"><img src="{{panda.url}}"></span>
+          </div>
+          <i>{{panda.degree}}</i>
+        </li>
+      </ul>
+    </div>
+  </div>
+-->
+  <div class="wrapper">
+    <button class="btn-hollow logout_btn" (click)="logoutClick()">退出登录</button>
+  </div>
+</ion-content>

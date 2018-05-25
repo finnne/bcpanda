@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>领取成功</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="sec_success" [style.background-color]="'#'+ panda.backColor">
+		<span class="img_panda">
+			<img src="{{panda.url}}"/>
+			<i>{{panda.degree}}</i>
+		</span>
+		<h5>区块链熊猫领养成功</h5>
+      	<p>您可以在账户中查看区块链熊猫详情</p>
+	</div>
+
+	<div class="wrapper sec_bottom">
+		<button class="btn-base full" (click)="enterMineBtnClick()">进入我的账户</button>
+	</div>
+</ion-content>
+

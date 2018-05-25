@@ -1,0 +1,257 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+// ======================= clear auto style =================
+
+*{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;margin: 0;}
+ol,ul,li,dl,dt,dd{list-style-type:none;}
+a {text-decoration:none;outline: none;}
+input,button{font-family: inherit;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;    
+    margin: 0;
+}
+
+// ======================= public auto style =================
+
+
+.full{
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper{
+  display: block;
+  width: 94%;
+  margin: 0 auto;
+}
+
+.btn-base{
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff5060;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.btn-hollow{
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #ff5060;
+  background-color: #ffffff;
+  border: 1px solid #ff5060;
+}
+
+.border-box{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+.middle-box:before{
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.flex-center{
+  width: 100%;
+  height: 100%;
+  display: flex !important; 
+  align-items: center; 
+  justify-content: center;
+  flex-direction: row;
+}
+.flex-middle{
+    width: 100%;
+    height: 100%;
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.clearfix{zoom:1;}
+.clearfix:before,.clearfix:after{display:table;content:" "}
+.clearfix:after{clear:both}
+
+
+.toolbar-title{
+  font-size: 18px !important;
+  color: #333333 !important;
+  text-align: center;
+}
+
+.bg_white{
+  background-color: #ffffff;
+}
+.mt10{
+  margin-top: 10px;
+}
+.split_line{
+  width: 100%;
+  height: 1px;
+  background-color: #e4e4e4;
+}
+
+.colred{
+  color: #ff5060 !important;
+}
+.colblue{
+  color: #5eb3fd !important;
+}
+.colgray{
+  color: #999999 !important;
+}
+
+// ======================= public override style =================
+
+/*内容区背景*/
+.ion-page > ion-content{
+  background-color: #f8f8f8;
+}
+
+/*重写头部底部边框（兼容安卓0.5px）*/
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+  border: none;
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom:0;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: #e4e4e4;
+    transform:scale(0.5);
+  }
+}
+.tabs-ios .tabbar{
+  border: none;
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: #e4e4e4;
+    transform:scale(0.5);
+  }
+}
+
+/*去掉浏览器中StatusBar*/
+/*.statusbar-padding{
+  &{
+    padding-top: calc(0px + 4px) !important;
+    padding-top: calc(constant(safe-area-inset-top) + 4px) !important;
+    padding-top: calc(env(safe-area-inset-top) + 4px) !important;
+    min-height: calc(44px + 0px) !important;
+    min-height: calc(44px + constant(safe-area-inset-top)) !important;
+    min-height: calc(44px + env(safe-area-inset-top)) !important;
+  }
+  .title{
+    padding-top: 0px !important;
+    padding-top: constant(safe-area-inset-top) !important;
+    padding-top: env(safe-area-inset-top) !important;
+    height: calc(44px + 0px) !important;
+    height: calc(44px + constant(safe-area-inset-top)) !important;
+    height: calc(44px + env(safe-area-inset-top)) !important;
+    min-height: calc(44px + 0px) !important;
+    min-height: calc(44px + constant(safe-area-inset-top)) !important;
+    min-height: calc(44px + env(safe-area-inset-top)) !important;
+  }
+}*/
+
+/*.back-button{
+  position: absolute;
+  z-index: 9999;
+}*/
+
+/*返回按钮样式*/
+.back-button-icon{
+  font-size: 3rem;
+}
+.back-button-text{
+  font-size: 1.4rem;
+}
+
+/*下拉／上拉状态文字样式*/
+.refresher-pulling-text, 
+.refresher-refreshing-text,
+.infinite-loading-text{
+  font-size: 12px;
+}
+
+/*自定义居中toast*/
+.toast_show{
+  text-align: center;
+  & > div{
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
+}
+
+/*自定义块状toast*/
+.toast_block{
+    .toast-wrapper{
+        width: 120px;
+        background-color:rgba(0,0,0,0.7);
+    }
+    .toast-container{
+      padding-top: 50px;
+      background: url('../assets/imgs/icon_success.png') no-repeat center 10px;
+      background-size: auto 40px;
+    }
+    &.success .toast-container{
+      background-image: url('../assets/imgs/icon_success.png');
+    }
+    &.warn .toast-container{
+      background-image: url('../assets/imgs/icon_warn.png');
+    }
+    .toast-message{
+      font-size: 12px;
+      text-align: center;
+      padding: 10px;
+      white-space: pre;
+    }
+}
+
+/*重写alert*/
+.alert-wrapper{
+    .alert-message{
+      white-space: pre;
+      overflow-y: auto; 
+    }
+}
+

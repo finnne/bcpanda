@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>区块链熊猫详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class="bg_white">
+		<div class="img_panda" [style.background-color]="'#'+ panda.backColor">
+			<img src="{{panda.url}}"/>
+		</div>
+		<div class="info_base wrapper">
+			<h6>{{panda.name}}　</h6>
+      		<p>
+      			第{{panda.generation}}代<small> |</small>
+      			<span class="price" *ngIf="panda.state==2">{{panda.price}}竹子</span>
+      			<span *ngIf="panda.state!=2">暂未定价</span>
+      		</p>
+      		<i>{{panda.degree}}</i>
+		</div>
+	</div>
+
+	<div class="bg_white mt10">
+		<div class="wrapper info_con">
+			<h6>所有者:</h6>
+			<span class="user_head"><img src="{{panda.headUrl || 'assets/imgs/head_default.png'}}"/></span>
+			<label class="user_name">{{panda.userName}}</label>
+		</div>
+		<hr class="split_line" />
+		<div class="wrapper info_con">
+			<h6>关于熊猫</h6>
+			<p class="desc">
+				每只熊猫拥有独特的256位“数字基因”，这个“数字基因”决定了熊猫的外形，超过40亿种组合，由于“基因算法”复杂，因此，每一个小时才能生成一只零代猫，限量10000只。“基因遗传算法”将随机从“父母亲”的数字基因中各抽取50%的“基因片段”，组成新的"数字基因“，从而产生新一代熊猫，这就是“繁殖”。
+			</p>
+		</div>
+		<!-- <div class="wrapper info_con">
+			<h6>属性</h6>
+			<ul class="attribute">
+				<li>体型：天使</li>
+				<li>眼睛：小对眼</li>
+				<li>嘴巴：三瓣</li>
+				<li>花纹：耀斑</li>
+				<li>肚皮色：异光蓝</li>
+				<li>眼睛色：浅钴蓝</li>
+				<li>身体色：静谧蓝</li>
+				<li> 花纹色：紫罗兰</li>
+			</ul>
+		</div> -->
+	</div>
+
+	<div class="space_50"></div>
+
+	<ion-fab class="btn_bar">
+		<button class="btn-base wrapper btn_space" *ngIf="panda.state==1" (click)="saleBtnClick()">卖出</button>
+		<button class="btn-hollow wrapper btn_space" *ngIf="panda.state==2" (click)="unsaleBtnClick()">取消出售</button>
+	</ion-fab>
+
+	<ion-fab id="inputContainer" class="input_container">
+		<div class="input_con">
+			<label>出售价格 (竹子)</label>
+			<input type="number" [(ngModel)]="txtPrice" oninput="value=(value==0 ? '' : value)" placeholder="请输入1～10000的价格"/>
+		</div>
+		<div class="btn_con">
+			<button (click)="certainPriceClose()">取消</button>
+			<button class="colred" (click)="certainPriceClick()">确定</button>
+		</div>
+	</ion-fab>
+
+	<ion-fab id="confirmContainer" class="confirm_container">
+		<i class="close_btn" (click)="confirPriceClose()"></i>
+		<h4>请您确认出售价格</h4>
+		<div class="confirm_con">
+			<p class="des">出售价格</p>
+			<p class="price colred">{{txtPrice}} 竹子</p>
+			<p class="tip">出售交易暂时不会收取手续费用</p>
+		</div>
+		<button class="btn-base wrapper" (click)="confirmPriceClick()">确认</button>
+	</ion-fab>
+</ion-content>
+

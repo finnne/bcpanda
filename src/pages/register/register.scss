@@ -1,0 +1,137 @@
+page-register {
+
+	.reg_form{
+		&{
+			/*margin: 20px 0;*/
+			background-color: #ffffff;
+		}
+		li{
+			border-top: 1px solid #eeeeee;
+			padding: 20px 0 10px 0;
+			position: relative;
+		}
+		li:first-child{
+			border: none;
+		}
+		li > label{
+			font-size: 1.2rem;
+			color: #b6b6b6;
+			padding-left: 2.8rem;
+		}
+		li > input{
+			display: block;
+			height: 2.5rem;
+			padding-left: 2.8rem;
+			border:none;
+			background-color: none;
+		}
+		.pwd_switch{
+			position: absolute;
+			right: 15px;
+			bottom: 14px;
+		}
+		.sms_btn{
+			position: absolute;
+			height: 3rem;
+			line-height: 3rem;
+			right: 15px;
+			bottom: 14px;
+			font-size: 1.4rem;
+			color: #50aefe;
+			padding:0 10px;
+			background-color: transparent;
+			border: 1px solid #50aefe;
+			border-radius: 1.5rem;
+		}
+		.image_vcode_layer{
+			&{
+				position: fixed;
+				left: 0;
+				top:0;
+				z-index: 9;
+				width:100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.3);
+			}
+			.panel{
+				&{
+					width: 260px;
+					background-color: #f8f8f8;
+					border-radius: 5px;
+					text-align: center;
+					overflow: hidden;
+				}
+				h3{
+					font-size: 16px;
+					text-align: center;
+					margin: 20px 0;
+				}
+				input{
+					width: 150px;
+					height: 36px;
+					border: 1px solid #eee;
+					border-radius: 3px;
+					vertical-align: middle;
+					padding-left: 10px;
+					background-color: #fff;
+				}
+				img{
+					width: 60px;
+					height: 36px;
+					background-color: #eee;
+					margin: 0 0 0 2%;
+					vertical-align: middle;
+					border: none;
+				}
+				.btns{
+					border-top: 1px solid #ddd;
+					margin-top: 20px;
+					font-size: 0;
+					button{
+						display: inline-block;
+						vertical-align: top;
+						width: 50%;
+						height: 40px;
+						font-size: 16px;
+						color: #4e8ef7;
+						background-color: transparent;
+					}
+					button:first-child{
+						border-right: 1px solid #ddd;
+					}
+				}
+			
+			}
+		}
+	}
+	.agree{
+		&{
+			margin-top: 10px;
+			padding-left: 2.8rem;
+		}
+		.check_btn{
+			vertical-align: middle;
+		}
+		span{
+			vertical-align: middle;
+			padding-left: 5px;
+			color: #666666;
+		}
+	}
+	.reg_btn{
+		margin: 2rem 0 4rem 0;
+	}
+	.link_con{
+		&{
+			margin-top:4rem; 
+			width: 100%;
+			text-align: center;
+		}
+		.login_link{
+			font-size: 1.5rem;
+			color: #50aefe;
+		}
+	}
+	
+	
+}

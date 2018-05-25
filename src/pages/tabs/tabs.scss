@@ -1,0 +1,64 @@
+page-tabs {
+  .tab-button{
+    &{
+      flex-direction: row;
+    }
+    &:hover:not(.disable-hover), &[aria-selected=true]{
+      color: #ff5060 !important;
+    }
+    .tab-button-icon{
+      margin: 0;
+      display: inline-block;
+    }
+    .tab-button-text{
+      font-size: 1.4rem;
+      padding-left: 5px;
+    }
+    .tab_click_layer{
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .ion-tab-icon-base {
+    min-width: 0 !important;
+    height: 25px !important;
+  }  
+    
+  .ion-tab-icon-md-base {  
+    min-width: 0 !important;  
+    height: 25px !important;  
+  }
+    
+  $tabImageName: 'tab-1' 'tab-2';  
+  @for $i from 1 to 3 {  
+    //for ios  
+    .ion-ios-#{nth($tabImageName, $i)} {  
+      @extend .ion-tab-icon-base;  
+      content: url("../assets/icon/tabs/#{nth($tabImageName, $i)}-on.png");  
+    }  
+    .ion-ios-#{nth($tabImageName, $i)}-outline {  
+      @extend .ion-tab-icon-base;  
+      content: url("../assets/icon/tabs/#{nth($tabImageName, $i)}-off.png");  
+    }  
+    
+    // for android  
+    .tabs-md .tab-button[aria-selected=true] {  
+      .ion-md-#{nth($tabImageName, $i)} {  
+        @extend .ion-tab-icon-md-base;  
+        content: url("../assets/icon/tabs/#{nth($tabImageName, $i)}-on.png");  
+      }  
+    }  
+    .tabs-md .tab-button[aria-selected=false] {  
+      .ion-md-#{nth($tabImageName, $i)} {  
+        @extend .ion-tab-icon-md-base;  
+        content: url("../assets/icon/tabs/#{nth($tabImageName, $i)}-off.png");  
+      }  
+    }  
+  }
+
+}
